@@ -24,10 +24,12 @@ jobs:
       - run:
           name: build frontend files
           command: npm run frontend:build
-      - persist_to_workspace:
-          root: udagram/udagram-frontend
-          paths:
-            - www
+      - run:
+          name: install api
+          command: npm run api:install
+      - run:
+          name: build api
+          command: npm run api:build
 
   deploy:
     docker:
@@ -38,17 +40,12 @@ jobs:
       - checkout
       - eb/setup
       - aws-cli/setup
-      - attach_workspace:
-          at: /tmp/www
-      - run:
-          name: check artifacts
-          command: |
-            ls /tmp/www/*
       - run:
           name: deploy frontend
-          command: |
-            ls /tmp/www
-            npm run frontend:deploy
+          command: npm run frontend:deploy
+      - run:
+          name: deploy api
+          command: npm run api:deploy
             
 workflows:
   udagram:
