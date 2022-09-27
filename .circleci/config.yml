@@ -43,7 +43,7 @@ jobs:
       - run:
           name: check artifacts
           command: |
-            ls /tmp/www
+            ls /tmp/www/*
       - run:
           name: deploy frontend
           command: |
