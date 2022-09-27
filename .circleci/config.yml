@@ -25,9 +25,9 @@ jobs:
           name: build frontend files
           command: npm run frontend:build
       - persist_to_workspace:
-          root: udagram/udagram-frontend/www
+          root: udagram/udagram-frontend
           paths:
-            - frontend-artifacts
+            - www
 
   deploy:
     docker:
@@ -39,12 +39,12 @@ jobs:
       - eb/setup
       - aws-cli/setup
       - attach_workspace:
-          at: /tmp/frontend-artifacts
+          at: /tmp/www
       - run:
           name: check artifacts
           # TODO: Install, build, deploy in both apps
           command: |
-            ls /tmp/frontend-artifacts
+            ls /tmp/wwww
             
 workflows:
   udagram:
