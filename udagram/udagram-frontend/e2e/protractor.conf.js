@@ -14,6 +14,7 @@ exports.config = {
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
+  chromeDriver: './../src/chromedriver',
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
