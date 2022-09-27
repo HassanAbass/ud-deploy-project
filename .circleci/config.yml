@@ -32,19 +32,23 @@ jobs:
   deploy:
     docker:
       - image: "cimg/base:stable"
-      # more setup needed for aws, node, elastic beanstalk
     steps:
       - node/install:
-          node-version: '14.15' 
+          node-version: '14.15'
+      - checkout
       - eb/setup
       - aws-cli/setup
       - attach_workspace:
           at: /tmp/www
       - run:
           name: check artifacts
-          # TODO: Install, build, deploy in both apps
           command: |
-            ls /tmp/wwww
+            ls /tmp/www
+      - run:
+          name: deploy frontend
+          command: |
+            ls /tmp/www
+            npm run frontend:deploy
             
 workflows:
   udagram:
