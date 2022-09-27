@@ -17,20 +17,17 @@ jobs:
       - eb/setup
       - run:
           name: Install frontend modules
-          command: cd ud-deploy-project & npm run frontend:install
+          command: npm run frontend:install
       - run:
           name: lingting frontend
-          command: cd ud-deploy-project & npm run frontend:lint
+          command: npm run frontend:lint
       - run:
           name: build frontend files
-          command: cd ud-deploy-project & npm run frontend:build
-      - run:
-          name: build frontend files
-          command: cd ud-deploy-project & npm run frontend:build
+          command: npm run frontend:build
       - persist_to_workspace:
-          root: frontend-artifacts
+          root: udagram/udagram-frontend/www
           paths:
-            - ud-deploy-project/udagram/udagram-frontend/www
+            - frontend-artifacts
 
   deploy:
     docker:
