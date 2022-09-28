@@ -14,6 +14,8 @@ Pipeline workflow :
 - Deploy Frontend to prod 
 - Deploy API to prod
 ```
+- Diagram
+![diagram](../screenshots/pipeline-diagram.png)
 - Workflow
 ![diagram](../screenshots/pipeline-workflow.png)
 - Jobs sequence

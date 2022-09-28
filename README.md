@@ -40,6 +40,8 @@ export const environment = {
 ![EB-ENV](screenshots/eb-env.png)
 - High level diagram
 ![diagram](screenshots/infrastructure.png)
+- Diagram
+![diagram](screenshots/pipeline-diagram.png)
 - Pipeline workflow
 ![pipeline-workflow](screenshots/pipeline-workflow.png)
 - Pipeline jobs
