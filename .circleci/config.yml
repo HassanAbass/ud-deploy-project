@@ -19,16 +19,16 @@ jobs:
           name: Install frontend modules
           command: npm run frontend:install
       - run:
-          name: lingting frontend
+          name: Lingting frontend
           command: npm run frontend:lint
       - run:
-          name: build frontend files
+          name: Build frontend files
           command: npm run frontend:build
       - run:
-          name: install api
+          name: Install API files
           command: npm run api:install
       - run:
-          name: build api
+          name: Build API files
           command: npm run api:build
 
   deploy:
@@ -41,10 +41,10 @@ jobs:
       - eb/setup
       - aws-cli/setup
       - run:
-          name: deploy frontend
+          name: Deploy Frontend to prod
           command: npm run frontend:deploy
       - run:
-          name: deploy api
+          name: Deploy API to prod
           command: npm run api:deploy
             
 workflows:
