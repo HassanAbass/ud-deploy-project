@@ -41,6 +41,6 @@ export const environment = {
 - High level diagram
 ![diagram](screenshots/infrastructure.png)
 - Pipeline workflow
-![diagram](screenshots/pipeline-workflow.png)
+![pipeline-workflow](screenshots/pipeline-workflow.png)
 - Pipeline jobs
-![diagram](screenshots/pipeline-jobs.png)
+![pipeline-jobs](screenshots/pipeline-jobs.png)
